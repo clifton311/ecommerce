@@ -3,14 +3,16 @@ import { Card } from "react-bootstrap";
 import Rating from "./Rating";
 import { Link } from "react-router-dom";
 
-function Product({ product }) {
+function Products({ product }) {
+
+    console.log(product)
   return (
     <Card className="my-3 p-3 rounded">
-      <Link to={`/product/${product.id}`}>
+      <Link to={`/product/${product._id}`}>
         <Card.Img src={product.image} />
       </Link>
       <Card.Body>
-        <Link to={`/product/${product.id}`}>
+        <Link to={`/product/${product._id}`}>
           <Card.Title as="div">
             <strong>{product.name}</strong>
           </Card.Title>
@@ -33,4 +35,4 @@ function Product({ product }) {
   );
 }
 
-export default Product;
+export default Products;

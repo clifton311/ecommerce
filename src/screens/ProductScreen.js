@@ -5,14 +5,13 @@ import Rating from "../components/Rating";
 import products from "../products";
 import { useParams } from "react-router-dom";
 
-function ProductScreen(props) {
+function ProductScreen() {
  
-  let params = useParams();
-  console.log(JSON.stringify(params))
+  let product_id = useParams();
+  console.log("product",product_id)
 
-  
-  //const product = products.find((p) => p._id === params.id);
-  return <div>product</div>;
+  const product = products.find((p) => p._id === product_id.id);
+  return <div>{product.name}</div>;
 }
 
 export default ProductScreen;
